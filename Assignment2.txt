@@ -1,0 +1,21 @@
+(1). NPM stands for node package manager.
+-> NPM is  a fundamental tool in the React.js ecosystem.
+-> It is not exclusive to React and is widely used in JavaScript development.
+->It serves  both  package registry and  command-line interface tool.
+->Role in react.js development is dependency management,Package installation,script execution and tooling and build process.
+
+(2). Parcel or webpack
+->Parcel and Webpack are both module bundlers for web applications.
+->They are essential tools in modern web development because they help optimize and prepare your code for deployment in a browser. 
+->Why are module bundlers like parcel and webpack needed means Bundlers manages dependencies, that all necessary files are included and loaded in the correct order.
+-> And for performance optimization  that means reduced HTTP requests,code splitting,minification and uglification and transpilation
+
+(3). Parcel Cache
+->Parcel cache refers to the mechanism within the Parcel web application bundler.
+->That  bundler stores information about our project's assets, dependencies, and transformations on disk. 
+->Cache is a temporary, high-speed storage area that holds frequently accessed data to speed up future requests.
+->Cache acts as an intermediary between a user's device and a primary storage location. 
+
+(4). NPX stands stands for Node Package eXecute 
+-> npx is a command-line tool that comes bundled with npm.
+->
