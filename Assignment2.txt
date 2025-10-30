@@ -19,3 +19,93 @@
 (4). NPX stands stands for Node Package eXecute 
 -> npx is a command-line tool that comes bundled with npm.
 ->Its primary purpose is to execute Node.js packages directly from the npm registry without requiring a global or local installation of that package.
+
+
+(5). Difference between dependencies and devDependencies
+-> Dependencies are packages your project needs to run in production, while devDependencies are only needed during the development phase for tasks like testing or building
+-> dependencies are bundled with your application, while devDependencies are not, which helps reduce the final production build size.  
+
+
+(6). Tree shacking
+->Tree shaking is a code optimization technique that eliminates unused code from a JavaScript bundle.
+->By analyzing the dependency tree and identifying code that is not imported or used, tools like webpack and Rollup.
+
+
+(7). Hot module replacement
+->Hot Module Replacement (HMR) is a development tool that allows code changes to be applied to a running application without a full page reload.
+-> Instead of reloading the entire application, HMR updates only the specific modules that have been changed.
+
+(8). Super powers of parcel
+1.Zero configuration
+2.Fast build times
+3.Hot Module Replacement 
+4.Excellent diagnostics
+5.Built-in code splitting
+->Zero configuration: Parcel automatically detects and configures assets like JavaScript, CSS, HTML, and images, eliminating the need for complex setup files and allowing for quicker project starts.
+->Fast build times: Engineered for performance, Parcel uses multi-core processing and a fast JavaScript compiler written in Rust. It also caches the build process to avoid redundant work.
+->Hot Module Replacement (HMR): This feature enables instant code updates in the browser without a full page reload, significantly improving the development workflow.
+
+(9). .gitignore
+->A .gitignore file is a plain text file used in Git repositories to specify intentionally untracked files that Git should ignore. 
+
+What to add to .gitignore:
+->You should add files and directories that are generated automatically, are specific to your local environment, or contain sensitive information. Examples include: Compiled code and build artifacts.
+
+What not to add to .gitignore:
+->Source code files
+->Configuration files required for the project to run
+->Project documentation
+->Files that are already tracked by Git.
+
+(10).Differnce between package.json and package-lock.json
+-> package.json specifies version ranges, while package-lock.json locks down exact versions.
+->package.json is manually created and updated, whereas package-lock.json is automatically generated and managed by npm.
+->Package.json is intended for human editing, while package-lock.json is not.
+
+(11).Package-lock.json modification is not possible
+-> package-lock.json manually is that it ensures your project's dependencies are identical and consistent across all environments and for all team members. 
+->Editing it manually risks causing subtle differences in package versions, which can lead to hard-to-diagnose bugs and the classic "it works on my machine" problem.
+
+(12). Node modules
+->node_modules is a directory created by npm (Node Package Manager) in a Node.js project.
+->It serves as a repository for all the dependencies and packages required by the project.
+Is this good to push into Git
+->It is generally not recommended to push the node_modules folder into Git for most Node.js projects.
+ ->node_modules folder can become extremely large, containing thousands of files and consuming significant disk space. Pushing it to Git creates unnecessary bloat in your repository, making cloning and fetching slower for everyone involved. 
+
+(13). dist folder
+->The dist folder, short for "distribution," is a common directory in software development, particularly in web development, that holds the final, production-ready version of an application or library's code and assets. 
+
+(14). Script types
+->It is a set of instructions written in a specific language to automate tasks or control processes.
+There are two main categories of scripts:
+1. Scripts for Media and Performance.
+2.Scripts for Computing and Automation.
+
+Codes
+(1). Initilize npm to repo
+->npm init
+
+(2).install react dom
+->npm install react react-dom
+
+(3). Remove CDN links
+ ->   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+(4).install parcel
+    npm install react react-dom
+    npm install --save-dev parcel
+
+
+(5).ignite App with parcel
+->mkdir my-parcel-app
+cd my-parcel-app
+->npm init -y
+->npm install --save-dev parcel
+->
+"scripts": {
+  "start": "parcel index.html",
+  "test": "echo \"Error: no test specified\" && exit 1"
+}
+->npm start
