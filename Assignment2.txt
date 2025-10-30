@@ -18,4 +18,4 @@
 
 (4). NPX stands stands for Node Package eXecute 
 -> npx is a command-line tool that comes bundled with npm.
-->
+->Its primary purpose is to execute Node.js packages directly from the npm registry without requiring a global or local installation of that package.
