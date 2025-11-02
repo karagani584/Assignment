@@ -1,0 +1,103 @@
+(1).JSX
+->JSX (JavaScript XML) is a syntax extension for JavaScript, commonly used with the React library to describe the structure of user interfaces. 
+->JSX allows developers to write HTML-like markup directly within JavaScript code.
+* HTML-like syntax: 
+JSX provides a familiar syntax similar to HTML, making it intuitive for web developers to define UI elements.
+* Embeddable JavaScript expressions:
+You can embed any valid JavaScript expression within curly braces {} inside JSX.
+This enables dynamic content rendering, including variables, function calls, and more. 
+
+(2).Super powers of JSX
+->JavaScript XML, offers several powerful features that make building user interfaces in React more intuitive and efficient.
+->JSX allows developers to describe the structure of the UI using a syntax that closely resembles HTML, making it highly readable and understandable.
+-> JSX enables the embedding of JavaScript expressions directly within the markup using curly braces {}.
+->JSX inherently supports and encourages a component-based approach to UI development.
+
+(3).Role of Type attribute
+->The type attribute in an HTML <script> tag specifies the Internet media type (formerly known as MIME type) of the script. 
+->This attribute provides context to browsers on how the code within the <script> tags should be handled and executed. 
+type of  attribute i can use 
+->This is the traditional and default MIME type for classic JavaScript scripts.
+If the type attribute is omitted, browsers will typically assume text/javascript.
+While still widely used, modern recommendations suggest omitting the attribute for standard JavaScript to encourage browser optimization
+
+(4).Tittle component
+->In JSX, the syntax for rendering components and passing children differs significantly: {TitleComponent}.
+->This syntax is used for embedding JavaScript expressions within JSX.
+-> If TitleComponent were a variable holding a string, number, or another valid JSX element, that value would be rendered. 
+->If TitleComponent were a function that returns JSX, calling that function (e.g., {TitleComponent()}) would render its output.
+
+(5).(1). import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+// First nested element structure
+const nestedElement1 = React.createElement(
+  'div',
+  { className: 'title' },
+  React.createElement('h1', null, 'Main Heading'),
+  React.createElement('h2', null, 'Subheading One'),
+  React.createElement('h3', null, 'Subheading Two')
+);
+
+// Second nested element structure with the same class
+const nestedElement2 = React.createElement(
+  'div',
+  { className: 'title' },
+  React.createElement('h1', null, 'Another Main Heading'),
+  React.createElement('h2', null, 'Another Subheading One'),
+  React.createElement('h3', null, 'Another Subheading Two')
+);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <>
+    {nestedElement1}
+    {nestedElement2}
+  </>
+);
+
+(2).import React from 'react';
+import ReactDOM from 'react-dom';
+
+function TitleComponent() {
+  return (
+    <div className="title">
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+    </div>
+  );
+}
+
+ReactDOM.render(<TitleComponent />, document.getElementById('root'));
+
+
+
+(3).
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+// Create the nested structure
+const nestedElement = React.createElement(
+  'div',
+  { className: 'title' }, // Attributes for the div
+  React.createElement(
+    'h1',
+    { id: 'main-heading', style: { color: 'blue' } }, // Attributes for h1
+    'Main Title'
+  ),
+  React.createElement(
+    'h2',
+    { className: 'sub-heading' }, // Attributes for h2
+    'Secondary Title'
+  ),
+  React.createElement(
+    'h3',
+    { 'data-info': 'tertiary' }, // Attributes for h3 (custom data attribute)
+    'Tertiary Title'
+  )
+);
+
+// Render the element to the root
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(nestedElement);
